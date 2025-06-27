@@ -1,0 +1,141 @@
+:root {
+  --color-principal: #f3a0f9;
+  --color-secundario: #db82f9;
+  --color-fondo: #f5f5f5;
+  --color-texto: #333;
+  --fuente-base: clamp(1rem, 2.5vw, 1.25rem);
+  --linea-base: clamp(1.4, 1.5vw + 1rem, 1.8);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  line-height: var(--linea-base);
+  font-size: var(--fuente-base);
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+}
+
+header {
+  background-color: var(--color-principal);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+.titulo-principal {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style: none;
+  margin-top: 0.5rem;
+}
+
+nav ul li {
+  margin: 0.5rem 1rem;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+main {
+  padding: 2rem;
+}
+
+.destacados .libros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.libros article {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  padding: 1rem;
+  width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.libros article:hover {
+  transform: scale(1.03);
+}
+
+.libros img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1/1; /* cuadrado en móvil */
+  border-radius: 10px;
+}
+.btn {
+  display: inline-block;
+  background-color: #9919c4;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  border: none;
+  border-radius: 12px;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* Movimiento al pasar el mouse */
+.btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(183, 129, 229, 0.2);
+  cursor: pointer;
+background-color: rgb(213, 154, 200);
+}
+
+.categorias ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+  list-style: none;
+  justify-content: center;
+
+}
+
+.categorias li {
+  background: var(--color-secundario);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: bold;
+}
+.categorias li:hover {
+  transform: scale(1.03);
+  background-color: #f3a0f9;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #2d3436;
+  color: white;
+  margin-top: 2rem;
+}
+
+/* Media Query */
+@media (min-width: 768px) {
+  .libros img {
+    aspect-ratio: 16/9; /* panorámica en desktop */
+  }
+}
